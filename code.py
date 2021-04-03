@@ -6,19 +6,19 @@ import csv
 li=[]
 li1=[]
 count=0
-dicta = pd.read_csv("C:\\Users\\potnu\\Desktop\\exeter-coding-challenge\\french_dictionary.csv", header=None)
+dicta = pd.read_csv("C:\\Users\\Desktop\\Downloads\\exeter-coding-challenge\\french_dictionary.csv", header=None)
 dicta.index = dicta[0]
 dicta.drop(labels=[0], axis=1, inplace=True)
 dicta.index.name = "Eng"
 dicta.columns = ["Fre"]
 
-fo=open("C:\\Users\\potnu\\exeter-coding-challenge\\t8.shakespeare.output.txt","a")
-with open("C:\\Users\\potnu\\exeter-coding-challenge\\t8.shakespeare.txt", "r") as files:
+fo=open("C:\\Users\\exeter-coding-challenge\\t8.shakespeare.output.txt","a")
+with open("C:\\Users\\exeter-coding-challenge\\t8.shakespeare.txt", "r") as files:
 
     for line in files.readlines():
             li1.append(line)
 le=len(li1)
-with open("C:\\Users\\potnu\\Desktop\\exeter-coding-challenge\\find_words.txt", "r") as file:
+with open("C:\\Users\\Desktop\\Downloads\\exeter-coding-challenge\\find_words.txt", "r") as file:
     for line in file:
         for word in line.split():
             li.append(word)
@@ -36,7 +36,7 @@ for i in range(0,le):
 for i in range(le):
     li1[i]=li1[i]+"\n"
 fo.writelines(li1)
-with open('C:\\Users\\potnu\\Desktop\\exeter-coding-challenge\\frequency.csv', 'w') as f:
+with open('C:\\Users\\Desktop\\Downloads\\exeter-coding-challenge\\frequency.csv', 'w') as f:
     for key, value in temp.items():
         f.write(str(key)+","+str(value)+"\n")
 endtime=time.time()
